@@ -1,0 +1,25 @@
+{% extends 'secondbase.html'%}
+{% block title %}eniqury{% endblock %}
+
+{% block content %}
+
+<table class="table table-striped table-dark" style="border:1px solid black;">
+    <thead>
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">Email</th>
+        <th scope="col">phoneNumber</th>
+      </tr>
+    </thead>
+    {% for i in form %}
+    <tbody>
+      <tr>
+
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.phno}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endblock %}

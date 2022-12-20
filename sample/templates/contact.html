@@ -1,0 +1,51 @@
+{% extends 'mainbase.html' %}
+{% block title %}contact{% endblock %}
+{% block content %}
+
+
+        {% if out == 1%}
+        <div class="alert alert-dark container text-center col-6" role="alert">
+            hii {{name}},we will contact you later.....
+        </div>
+        {% endif %}
+        <div style="float:left;width:50%">
+        <h2>Contact US</h2>
+        <p>Call us on:call+918086651651</p>
+        <p>Email us at:Seoulnationaluniversity@gmail.com</p>
+        <p>Enquiry:contact@Seoulnationaluniversity.com</p>
+        <p><i class="bi bi-android"></i>Connect us on:Whatsapp</p>
+        <div><i class="bi bi-0-circle-fill"></i>locate US on:Google map</div>
+        <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=610&amp;height=462&amp;hl=en&amp;q=seoul national university soth korea&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://formatjson.org/">format json</a></div><style>.mapouter{position:relative;text-align:right;width:610px;height:462px;}.gmap_canvas {overflow:hidden;background:none!important;width:610px;height:462px;}.gmap_iframe {width:610px!important;height:462px!important;}</style></div>
+        </div>
+
+        <div style="float:right;width:50%;margin-top:10px;margin-bottom: 100%;">
+          <div style="border-style: groove;border-radius:12px ;height:400px;width:600px;padding-left:20px;margin-top:30px;">
+            <h3>How can we be of assistance?</h3>
+            <p>if you require clarifications on any of the courses on the admission process,we are happy to help</p>
+            <form action=""method="POST">
+              {% csrf_token %}
+            <div>
+            <label>Name:</label>
+            <input type="text"  id="name" name="name"style="border: 2px soild;border-radius:12px; padding: 8px;width: 250px;height:30px">
+            </div>
+            <div style="padding-top:15px;">
+            <label>Email:</label>
+            <input type="email"  id="email" name="email"style="border:2px soild;border-radius: 12px; padding: 8px;width: 250px;height:30px">
+            </div>
+            <div style="padding-top:15px;">
+            <label>phone number:</label>
+            <input type="number" id="phno" name="phno"style="border: 2px soild;border-radius:12px; padding: 8px;width: 250px;height:30px">
+            </div>
+            <div style="padding-top:15px;">
+                <input type="submit" value="submit " style="padding-left:20px;">
+            </div>
+            </form>
+            
+
+        </div>
+        {% endblock %}
+
+        
+        <script src="" async defer></script>
+    </body>
+</html>

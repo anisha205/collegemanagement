@@ -1,0 +1,17 @@
+{% extends 'mainbase.html' %}
+{% block title %}mainhome{% endblock %}
+
+{% block content %}
+{% for c in course %}
+
+<div class="card text-center mx-3 my-3" style="width: 80vh; display:inline-block">
+        
+    <div class="card-body">
+        <h5 class="card-title text-muted">{{c.name}}</h5>
+        <p class="card-text">{{c.description}}</p>
+        <div class="d-flex"><h6>duration:</h6><p>{{c.duration}}month</p></div>
+        <div class="d-flex"><h6>fee:</h6><p>{{c.fee}}/-</p></div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div class="px">
+            <p id="text"></p>
+        </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div>{% for message in messages %}
+                <h3>{{message}}</h3>
+                {% endfor %}</div>
+        <div style="border:2px solid;width: 300px;padding: 20px;margin:auto;margin-top: 200px;">
+        <div style="margin-top:20px;">
+        <input type="text" id="name" name="name" placeholder="first name" onchange="validname()" required>
+        </div>
+        <div  style="margin-top:20px;">
+        <input type="email" id="email" name="email" placeholder="email" onchange="validemail()">
+        </div>
+        <div style="margin-top:20px;">
+        <input type="number"id="ph" name="phno" placeholder="phone number" onchange="validph()">
+        </div>
+        <div style="margin-top:20px;">
+        <input id="pass1" type="password" name="password"placeholder="password" onchange="validpass()"><br>
+        </div>
+        <div style="margin-top:20px;">
+        <input type="password" id="pass2" name="password2" placeholder="Confirm Password" onchange="validpassconform()">
+        </div>
+        <div  style="margin-top:20px;">
+        <input type="submit" value="signup" id="signup">
+        </div>
+        </div>
+        </form>
+        
+        <script src="{% static 'js/signup.js' %}" async defer></script>
+    </body>
+</html>

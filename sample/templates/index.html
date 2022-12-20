@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+            {% block title %}index{% endblock %}
+            {% block content %}
+            
+
+           </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+    <div style="border:2px solid;width:25%;height: 250px; padding:5px;margin-left:30%;margin-top: 10%;">
+        <h2 style="text-align: center;">SignIn</h2>
+        
+        
+            <div class="fld"id="frm">
+                <form method="post">
+                    {% csrf_token %}
+                <div>{% for message in messages %}
+                    <h3 style="color:red;">{{message}}</h3>
+                    {%endfor %}</div>
+            <div>
+                <input type="email" name="email" placeholder="email" style="width:20rem;margin-left: 10px;">
+            </div>
+            <div style="padding-top:20px;">
+               <input type="password" name="password" placeholder="password" style="width:20rem;margin-left: 10px;">
+            </div>
+            <div style="text-align: center;padding-top:20px;">
+               <input type="submit" value="signin"><br><br>
+               <a href="{% url 'password' %}" style="text-decoration:none;">forget password?</a>
+               </div>
+            </form>
+            <div style="text-align:center;padding-top:20px;">
+                <a href="{% url 'signup' %}"style="text-decoration:none;">Sign Up</a>
+
+            </div>
+        </div>
+
+     
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        {% endblock %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>
